@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>مفاجأة 22/5</title>
+  <style>
+    body {
+      background-color: #fff8e7;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #000;
+    }
+    .big-text {
+      font-size: 28px;
+      font-weight: bold;
+      color: #000;
+      margin: 20px 0;
+    }
+    .gif-container {
+      width: 90%;
+      max-width: 600px;
+      height: auto;
+      margin: 20px auto;
+    }
+    .gif-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .buttons {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    .buttons a {
+      text-decoration: none;
+      background-color: #c42f2f;
+      color: white;
+      padding: 12px 24px;
+      margin: 10px;
+      border-radius: 20px;
+      display: inline-block;
+      font-size: 18px;
+    }
+    .logos {
+      margin-top: 0px;
+    }
+    .logos img {
+      width: 80%;
+      max-width: 200px;
+      display: block;
+      margin: 0 auto;
+    }
+    #countdown {
+      font-size: 24px;
+      margin-top: 20px;
+      color: #c42f2f;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>مضحكناش عليك أوي</h1>
+  <p class="big-text">استنونا يوم 22/5 عشان تشوفوا الحلقة كاملة</p>
+
+  <!-- العد التنازلي -->
+  <p id="countdown"></p>
+
+  <script>
+    const countdown = document.getElementById("countdown");
+    const targetDate = new Date("2025-05-22T00:00:00").getTime();
+
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        countdown.innerText = "انتهى العد التنازلي!";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      countdown.innerText = `العد التنازلي: ${days} يوم، ${hours} ساعة، ${minutes} دقيقة، ${seconds} ثانية`;
+    };
+
+    setInterval(updateCountdown, 1000);
+  </script>
+
+  <!-- صورة Bakkar المتحركة -->
+  <div class="gif-container">
+    <img src="bakkar.gif" alt="Bakkar Animation">
+  </div>
+
+  <p class="big-text">أعمل فولو عشان تعرف أكتر عن الفرح و عن النوبة!</p>
+
+  <div class="buttons">
+    <a href="https://www.instagram.com/echoes_of_elnuba?igsh=MW8xNGg1OHVnMm92NQ==" target="_blank">
+      Instagram Page
+    </a>
+    <a href="https://www.facebook.com/share/1HJsp7mVjY/?mibextid=wwXIfr" target="_blank">
+      Facebook Page
+    </a>
+  </div>
+
+  <div class="logos">
+    <img src="logos.png" alt="Logos">
+  </div>
+
+</body>
+</html>
